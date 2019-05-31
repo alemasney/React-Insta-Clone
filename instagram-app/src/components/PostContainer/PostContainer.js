@@ -1,7 +1,7 @@
 import React from 'react';
 import CommentSection from '../CommentSection/CommentSection';
-import AddComment from '../AddComment/AddComment';
 import './PostContainer.css';
+import PropTypes from 'prop-types';
 
 const PostContainer = props => {
     return (
@@ -14,16 +14,25 @@ const PostContainer = props => {
                     </div>
                     <img src={item.imageUrl} alt='user post' />
                     <div className='post-icons'>
-                        <i className="far fa-heart"></i>
+                        <i 
+                        className="far fa-heart" 
+                        onClick={props.clickHandler} 
+                        ></i>
+                        
                         <i className="far fa-comment"></i>
                     </div>
                     <p>{item.likes} likes</p>
-                    <CommentSection commentInfo={item.comments} />
-                    <AddComment />
+                    <CommentSection 
+                        commentInfo={item.comments}
+                     />
                 </div>
             ))}
         </div>
     )
+}
+
+PostContainer.propTypes = {
+    postedItem: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default PostContainer;

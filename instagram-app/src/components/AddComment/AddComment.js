@@ -1,11 +1,12 @@
 import React from 'react';
 import './AddComment.css';
 
-const AddComment = () => {
+const AddComment = props => {
+
     return (
         <div className="add-comment">
-            <form>
-                <input type='text' placeholder='Add a comment...' name='comment'></input>
+            <form onSubmit={props.addNewComment}>
+                <input type='text' placeholder='Add a comment...' name='text' value={props.input.text} onChange={props.changeHandler}></input>
             </form>
             <span><i className="fas fa-ellipsis-h"></i></span>
         </div>
@@ -13,3 +14,4 @@ const AddComment = () => {
 }
 
 export default AddComment;
+

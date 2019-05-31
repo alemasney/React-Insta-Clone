@@ -3,11 +3,12 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    border: 1px solid rgb(197, 197, 197);
 }
 
 .username-section {
     display: flex;
-    margin-left: 20px;
+    margin-left: 10px;
     align-items: center;
 }
 
@@ -21,25 +22,27 @@
     -o-border-radius: 50%;
 }
 
-img {
+.post-container img {
+    max-height: 440px;
     margin: 5px 10px;
+    object-fit: cover;
 }
 
 .post-icons {
     display: flex;
-    margin-left: 40px;
+    margin-left: 20px;
     padding-top: 10px;
 }
 
 i {
-    font-size: 35px;
+    font-size: 20px;
 }
 
 .post-icons i:last-child {
-    margin-left: 15px;
+    margin-left: 10px;
 
 }
 
 .post-container p {
-    margin-left: 40px;
+    margin: 10px 20px;
 }

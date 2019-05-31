@@ -5,18 +5,25 @@ import PostContainer from './components/PostContainer/PostContainer';
 import dummyData from './dummy-data';
 
 class App extends React.Component {
-    constructor() {
-    super();
-    this.state = {
-      posts: dummyData
+    state = {
+      posts: []
     }
+
+  componentDidMount() {
+    this.setState ({
+      posts: dummyData
+    })
+  };
+
+  clickHandler = event => {
+
   }
 
     render() {
     return (
       <div className="App">
       <SearchBar />
-      <PostContainer postedItem={this.state.posts} />
+      <PostContainer postedItem={this.state.posts} clickHandler={this.clickHandler} />
       </div>
     );
   }
